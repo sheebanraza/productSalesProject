@@ -1,16 +1,13 @@
 
 import model.Product;
 import model.Sales;
-import org.springframework.cglib.beans.ImmutableBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.SalesService;
 
-import javax.sound.midi.SysexMessage;
 import java.util.*;
 
 import static com.google.common.collect.Lists.newArrayList;
-import static java.lang.Math.*;
 
 /**
  * Created by SHEEBAN on 27-11-2014.
@@ -21,7 +18,6 @@ public class MainClass {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-config.xml");
 
         SalesService salesService = applicationContext.getBean(SalesService.class);
-
         List<Product> productList = newArrayList();
         for(int i=0;i<10;i++){
             productList.add(new Product("Product"+ i));     //add 10 products
@@ -42,7 +38,7 @@ public class MainClass {
         List<Sales> listOfSales = newArrayList(sales1,sales2,sales3,sales4,sales5,sales6,sales7,sales8,sales9,sales10);
         for(Product product: persistedProducts) {
             for (Sales sales : listOfSales) {           // add sales for every product
-                sales.setSalesAmount((float) (sales.getSalesAmount()*Math.random())); //for getting randon Sales amount
+                sales.setSalesAmount((float) (sales.getSalesAmount()*Math.random())); //for getting random Sales amount
                 sales.setProduct(product);
             }
             salesService.addSalesData(listOfSales);

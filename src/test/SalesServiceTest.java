@@ -19,7 +19,6 @@ import java.util.List;
 import static com.google.common.collect.Lists.newArrayList;
 import static java.lang.Float.*;
 import static org.junit.Assert.*;
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -86,10 +85,10 @@ public class SalesServiceTest {
         objects[0] = "Prod1";
         objects[1] = "1";
         objects[2] = "115";
-        List<Object[]> list;
         when(entityManager.createQuery("select p.productName, count (*), SUM(s.salesAmount) " +
                 "from Product p JOIN p.sales s group by p.productName ")).thenReturn(mockedQuery);
         assertNotNull(mockedQuery);
+        assertEquals(objects.length,3);
     }
 }
 

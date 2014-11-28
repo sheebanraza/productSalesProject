@@ -10,7 +10,6 @@ import java.util.List;
  * Created by SHEEBAN on 27-11-2014.
  */
 
-@Component
 public interface SalesService {
 
     public List<Sales> addSalesData(List<Sales> sales);
