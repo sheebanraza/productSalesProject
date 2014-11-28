@@ -21,7 +21,6 @@
         <setting name="provider-name" value="" />
         <datasource-mapping>
           <factory-entry name="deriveSalesPersistenceUnit" />
-          <factory-entry name="entityManagerFactory" value="dataSource" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
       </configuration>
