@@ -25,7 +25,7 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private List<Sales> sales = new ArrayList<Sales>();
 
-    public Product(){
+    public Product(){ // for Hibernate
     }
 
     public Product(String productName) {

@@ -25,7 +25,7 @@ public class Sales {
     @JoinColumn(name="PRODUCT_ID")
     private Product product;
 
-    protected Sales() {
+    public Sales() { // for Hiberanate
     }
 
     public void setSalesId(Long salesId) {
